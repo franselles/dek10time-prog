@@ -26,10 +26,10 @@
               </div>
               <div class="field">
                 <button class="button is-success">
-                  Login
+                  LOGIN
                 </button>
               </div>
-              <a href="#" class="float-right">1.0.1</a>
+              <a href="#" class="float-right">1.0.2</a>
             </form>
           </div>
         </div>

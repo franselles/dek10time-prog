@@ -186,7 +186,7 @@
       <div class="field is-grouped">
         <div class="control">
           <button type="submit" class="button is-link">
-            SUBMIT
+            ACEPTAR
           </button>
         </div>
         <div class="control">

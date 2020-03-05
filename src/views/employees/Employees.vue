@@ -7,7 +7,7 @@
             <span class="icon">
               <i class="fas fa-user-plus"></i>
             </span>
-            <span>NUEVO REGISTRO</span>
+            <span>NUEVO EMPLEADO</span>
           </button>
         </div>
       </div>

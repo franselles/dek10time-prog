@@ -26,7 +26,7 @@
               >EMPLEADOS</router-link
             >
 
-            <a @click="goWorktime" class="navbar-item">HOY</a>
+            <a @click="goWorktime" class="navbar-item">REGISTROS DE HOY</a>
 
             <div class="navbar-item has-dropdown is-hoverable">
               <a class="navbar-link">

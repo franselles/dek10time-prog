@@ -17,7 +17,7 @@
             <span class="icon">
               <i class="fas fa-business-time"></i>
             </span>
-            <span>NUEVO</span>
+            <span>NUEVO REGISTRO HORARIO</span>
           </button>
         </div>
         <div class="columns">
