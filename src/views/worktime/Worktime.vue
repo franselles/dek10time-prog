@@ -76,7 +76,7 @@
               <td>{{ _hours(time.hours) }}</td>
               <td class="noprint">
                 <button
-                  class="button is-small is-primary is-light"
+                  class="button is-small is-link is-light"
                   @click="editTime(time)"
                 >
                   EDITAR

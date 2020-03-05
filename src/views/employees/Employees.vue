@@ -26,13 +26,13 @@
               <td>{{ employee.name }}</td>
               <td>
                 <button
-                  class="button is-small is-primary is-light"
+                  class="button is-small is-link is-light"
                   @click="editEmployee(employee)"
                 >
                   EDITAR
                 </button>
                 <button
-                  class="button is-small is-primary is-warning"
+                  class="button is-small is-warning is-light"
                   @click="worktimeDay(employee)"
                 >
                   HISTORICO

@@ -1,5 +1,5 @@
 <template>
-  <section class="hero is-warning is-fullheight">
+  <section class="hero is-info is-fullheight">
     <div class="hero-body">
       <div class="container">
         <div class="columns is-centered">
@@ -29,7 +29,7 @@
                   LOGIN
                 </button>
               </div>
-              <a href="#" class="float-right">1.0.2</a>
+              <a href="#" class="float-right">1.0.3</a>
             </form>
           </div>
         </div>

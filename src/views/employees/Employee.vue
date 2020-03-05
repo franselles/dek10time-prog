@@ -67,7 +67,7 @@
         </div>
       </div>
       <div class="field">
-        <label class="label">Message</label>
+        <label class="label">REGISTRO DE TURNOS DIARIOS</label>
         <div class="control">
           <table>
             <thead>
@@ -185,7 +185,7 @@
 
       <div class="field is-grouped">
         <div class="control">
-          <button type="submit" class="button is-link">
+          <button type="submit" class="button is-success">
             ACEPTAR
           </button>
         </div>
