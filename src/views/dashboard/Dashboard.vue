@@ -88,8 +88,13 @@ export default {
   },
   methods: {
     ...mapMutations('loginStore', ['resetUsuario']),
+    ...mapMutations('employeesStore', ['resetEmployee', 'setFiltroWorktime']),
     goWorktime() {
-      this.$router.push({ name: 'Worktime', params: { filter: 'all' } });
+      this.resetEmployee();
+      this.setFiltroWorktime('all');
+      const path = '/worktime';
+      if (this.$route.path !== path) this.$router.push(path);
+      // this.$router.push({ name: 'Worktime' });
     },
     logout() {
       this.resetUsuario();

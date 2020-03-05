@@ -21,9 +21,13 @@ export default {
       random_end: null,
       max: null,
       active: null
-    }
+    },
+    filtroWorktime: 'all'
   },
   mutations: {
+    setFiltroWorktime(state, payload) {
+      state.filtroWorktime = payload;
+    },
     setEmployees(state, payload) {
       state.employees = payload;
     },

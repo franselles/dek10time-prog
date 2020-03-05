@@ -28,7 +28,7 @@ export default [
         meta: { requiresAuth: true }
       },
       {
-        path: '/worktime/:filter',
+        path: '/worktime',
         name: 'Worktime',
         component: () => import('@/views/worktime/Worktime.vue'),
         meta: { requiresAuth: true }

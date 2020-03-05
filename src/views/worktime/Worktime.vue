@@ -3,7 +3,17 @@
     <div>
       <div class="noprint">
         <div class="buttons">
-          <button class="button is-info" @click="newTime">
+          <button class="button is-warning" @click="refreshData">
+            <span class="icon">
+              <i class="fas fa-sync"></i>
+            </span>
+            <span>ACTUALIZA</span>
+          </button>
+          <button
+            class="button is-info"
+            @click="newTime"
+            v-if="filtroWorktime !== 'all'"
+          >
             <span class="icon">
               <i class="fas fa-business-time"></i>
             </span>
@@ -11,7 +21,7 @@
           </button>
         </div>
         <div class="columns">
-          <div class="column">
+          <div class="column is-one-quarter">
             <div class="field">
               <label class="label">DIA INICIAL</label>
               <div class="control">
@@ -24,7 +34,7 @@
               </div>
             </div>
           </div>
-          <div class="column">
+          <div class="column is-one-quarter">
             <div class="field">
               <label class="label">DIA FINAL</label>
               <div class="control">
@@ -88,15 +98,13 @@ export default {
   name: 'Worktime',
   data() {
     return {
-      filter: 'all',
       date_1: new Date().toISOString().split('T')[0],
       date_2: new Date().toISOString().split('T')[0]
     };
   },
   mounted() {
-    this.filter = this.$route.params.filter;
     this.getTimes({
-      id: this.filter,
+      id: this.filtroWorktime,
       date_1: this.date_1,
       date_2: this.date_2
     });
@@ -106,7 +114,7 @@ export default {
     ...mapMutations('worktimeStore', ['setTime']),
     refreshData() {
       this.getTimes({
-        id: this.filter,
+        id: this.filtroWorktime,
         date_1: this.date_1,
         date_2: this.date_2
       });
@@ -130,7 +138,6 @@ export default {
       this.$router.push({ name: 'Detail' });
     },
     newTime() {
-      if (this.filter === 'all') return;
       this.setTime({
         _id: null,
         employee_id: this.employee._id,
@@ -148,7 +155,7 @@ export default {
   },
   computed: {
     ...mapState('worktimeStore', ['times']),
-    ...mapState('employeesStore', ['employee'])
+    ...mapState('employeesStore', ['employee', 'filtroWorktime'])
   }
 };
 </script>

@@ -59,7 +59,11 @@ export default {
   },
   methods: {
     ...mapActions('employeesStore', ['getEmployees']),
-    ...mapMutations('employeesStore', ['resetEmployee', 'setEmployee']),
+    ...mapMutations('employeesStore', [
+      'resetEmployee',
+      'setEmployee',
+      'setFiltroWorktime'
+    ]),
     editEmployee(data) {
       this.setEmployee(data);
       this.$router.push({ name: 'Employee' });
@@ -70,7 +74,10 @@ export default {
     },
     worktimeDay(data) {
       this.setEmployee(data);
-      this.$router.push({ name: 'Worktime', params: { filter: data._id } });
+      this.setFiltroWorktime(data._id);
+      const path = '/worktime';
+      if (this.$route.path !== path) this.$router.push(path);
+      // this.$router.push({ name: 'Worktime' });
     }
   },
   computed: {
