@@ -123,10 +123,10 @@ export default {
       return dayjs(date).format('DD-MM-YYYY');
     },
     _start(hour) {
-      return dayjs(hour).format('HH:MM');
+      return dayjs(hour).format('HH:mm');
     },
     _end(hour) {
-      return dayjs(hour).format('HH:MM');
+      return dayjs(hour).format('HH:mm');
     },
     _hours(hour) {
       const hours = Math.floor(hour / 60);
