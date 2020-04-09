@@ -1,0 +1,6 @@
+{
+  "tabWidth": 2,
+  "singleQuote": true,
+  "wrap_line_length": 120,
+  "endOfLine": "auto"
+}
