@@ -29,7 +29,7 @@
                   LOGIN
                 </button>
               </div>
-              <a href="#" class="float-right">1.0.7</a>
+              <a href="#" class="float-right">1.0.8</a>
             </form>
           </div>
         </div>
