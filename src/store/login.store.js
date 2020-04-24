@@ -1,4 +1,4 @@
-// import Vue from 'vue';
+import Vue from 'vue';
 
 export default {
   namespaced: true,
@@ -35,7 +35,7 @@ export default {
       state.login.user = payload.user;
       state.login.password = payload.password;
       state.login.level = payload.level;
-      state.login.isLogged = payload.isLogged;
+      state.login.isLogged = true;
     },
     resetUsuario(state) {
       state.login.user = null;
@@ -44,6 +44,22 @@ export default {
       state.login.isLogged = false;
     },
   },
-  actions: {},
+  actions: {
+    async postUserToken(context, payload) {
+      try {
+        const data = await Vue.axios({
+          method: 'post',
+          url: '/login',
+          data: { password: payload },
+        });
+        return data;
+      } catch (e) {
+        console.log('todosError', e.message);
+        console.log(e.response.data);
+        console.log(e.response.status);
+        console.log(e.response.headers);
+      }
+    },
+  },
   getters: {},
 };

@@ -29,7 +29,7 @@
                   LOGIN
                 </button>
               </div>
-              <a href="#" class="float-right">1.0.8</a>
+              <a href="#" class="float-right">1.0.9</a>
             </form>
           </div>
         </div>
@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex';
+import { mapState, mapMutations, mapActions } from 'vuex';
 
 export default {
   name: 'Login',
@@ -51,12 +51,18 @@ export default {
   mounted() {},
   methods: {
     ...mapMutations('loginStore', ['setUsuario']),
+    ...mapActions('loginStore', ['postUserToken']),
     login() {
-      let usuario = this.usuarios.find((data) => data.password === this.pin);
-      if (usuario) {
-        this.setUsuario(usuario);
-        this.$router.push({ name: 'Dashboard' });
-      }
+      this.postUserToken(this.pin)
+        .then((response) => {
+          if (response) {
+            this.setUsuario(response.data.message[0]);
+            this.$router.push({ name: 'Dashboard' });
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     },
   },
   computed: {

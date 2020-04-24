@@ -51,11 +51,18 @@ export default {
       let id = payload.id;
       let date_1 = payload.date_1;
       let date_2 = payload.date_2;
+      if (date_1 === '' || date_2 === '') return;
+
       try {
-        const { data } = await Vue.axios({
-          method: 'get',
-          url: `worktime/times/${id}/${date_1}/${date_2}`,
-        });
+        const { data } = await Vue.axios(
+          {
+            method: 'get',
+            url: `worktime/times/${id}/${date_1}/${date_2}`,
+          },
+          {
+            withCredentials: true,
+          }
+        );
         commit('setTimes', data);
       } catch (e) {
         console.log('todosError', e.message);
@@ -68,11 +75,16 @@ export default {
     },
     async postTime(context, payload) {
       try {
-        await Vue.axios({
-          method: 'post',
-          url: 'worktime/time',
-          data: payload,
-        });
+        await Vue.axios(
+          {
+            method: 'post',
+            url: 'worktime/time',
+            data: payload,
+          },
+          {
+            withCredentials: true,
+          }
+        );
       } catch (e) {
         console.log('todosError', e.message);
         console.log(e.response.data);
@@ -84,11 +96,16 @@ export default {
     },
     async putTime(context, payload) {
       try {
-        await Vue.axios({
-          method: 'put',
-          url: `worktime/time/${payload._id}`,
-          data: payload,
-        });
+        await Vue.axios(
+          {
+            method: 'put',
+            url: `worktime/time/${payload._id}`,
+            data: payload,
+          },
+          {
+            withCredentials: true,
+          }
+        );
       } catch (e) {
         console.log('todosError', e.message);
         console.log(e.response.data);
@@ -100,10 +117,15 @@ export default {
     },
     async deleteTime(context, payload) {
       try {
-        await Vue.axios({
-          method: 'delete',
-          url: `worktime/time/${payload._id}`,
-        });
+        await Vue.axios(
+          {
+            method: 'delete',
+            url: `worktime/time/${payload._id}`,
+          },
+          {
+            withCredentials: true,
+          }
+        );
       } catch (e) {
         console.log('todosError', e.message);
         console.log(e.response.data);

@@ -51,10 +51,15 @@ export default {
   actions: {
     async getEmployees({ commit }) {
       try {
-        const { data } = await Vue.axios({
-          method: 'get',
-          url: 'worktime/employees',
-        });
+        const { data } = await Vue.axios(
+          {
+            method: 'get',
+            url: 'worktime/employees',
+          },
+          {
+            withCredentials: true,
+          }
+        );
         commit('setEmployees', data);
       } catch (e) {
         console.log('todosError', e.message);
@@ -67,11 +72,16 @@ export default {
     },
     async postEmployee(context, payload) {
       try {
-        await Vue.axios({
-          method: 'post',
-          url: 'worktime/employee',
-          data: payload,
-        });
+        await Vue.axios(
+          {
+            method: 'post',
+            url: 'worktime/employee',
+            data: payload,
+          },
+          {
+            withCredentials: true,
+          }
+        );
       } catch (e) {
         console.log('todosError', e.message);
         console.log(e.response.data);
@@ -83,11 +93,16 @@ export default {
     },
     async putEmployee(context, payload) {
       try {
-        await Vue.axios({
-          method: 'put',
-          url: `worktime/employee/${payload._id}`,
-          data: payload,
-        });
+        await Vue.axios(
+          {
+            method: 'put',
+            url: `worktime/employee/${payload._id}`,
+            data: payload,
+          },
+          {
+            withCredentials: true,
+          }
+        );
       } catch (e) {
         console.log('todosError', e.message);
         console.log(e.response.data);

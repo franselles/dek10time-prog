@@ -14,6 +14,8 @@ const baseURL = '/api/';
 axios.defaults.baseURL = baseURL;
 axios.defaults.json = true;
 
+axios.defaults.withCredentials = true;
+
 Vue.use(VueAxios, axios);
 
 Vue.config.productionTip = false;
