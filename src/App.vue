@@ -5,10 +5,10 @@
 </template>
 
 <script>
-import Vue from 'vue';
+import axios from 'axios';
 export default {
   created: function () {
-    Vue.axios.interceptors.response.use(
+    axios.interceptors.response.use(
       (response) => {
         // Everything fine, just pass it for further processing.
         return response;

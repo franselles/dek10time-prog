@@ -4,6 +4,8 @@ const jwt = require('jsonwebtoken');
 const Users = require('../models/users_model');
 require('dotenv').config();
 
+const secure = require('./secure');
+
 function postUsersToken(req, res, next) {
   // const user = req.body.user;
   const password = req.body.password;
@@ -28,15 +30,15 @@ function postUsersToken(req, res, next) {
 
       // Create TOKEN
       const token = jwt.sign(tokenData, process.env.KEY, {
-        expiresIn: 60 * 10, // expires in 10 minutes
+        expiresIn: 60 * 60, // expires in 60 minutes
       });
 
       // Send the COOKIE with the token called 'mitok'
       res
         .cookie('csrftoken', token, {
-          maxAge: 600000,
+          maxAge: 3600000,
           httpOnly: true,
-          secure: true,
+          secure: secure,
         })
         .send({ message: doc });
       next();
