@@ -17,9 +17,9 @@ api.get(
   middlewareRouter,
   employeesControl.getEmployee
 );
-// api.get('/worktime/employees', middlewareRouter, employeesControl.getEmployees);
-api.get('/worktime/employees', employeesControl.getEmployees);
-api.post('/worktime/employee', employeesControl.postEmployee);
+api.get('/worktime/employees', middlewareRouter, employeesControl.getEmployees);
+api.get('/worktime/employees', middlewareRouter, employeesControl.getEmployees);
+api.post('/worktime/employee', middlewareRouter, employeesControl.postEmployee);
 api.put(
   '/worktime/employee/:id',
   middlewareRouter,
@@ -32,9 +32,9 @@ api.delete(
 );
 
 // Time
-api.post('/worktime/time', timeControl.postTimeMany);
-api.put('/worktime/time/:id', timeControl.putTime);
-api.delete('/worktime/time/:id', timeControl.deleteTime);
+api.post('/worktime/time', middlewareRouter, timeControl.postTimeMany);
+api.put('/worktime/time/:id', middlewareRouter, timeControl.putTime);
+api.delete('/worktime/time/:id', middlewareRouter, timeControl.deleteTime);
 api.get(
   '/worktime/timeday/:id/:date',
   middlewareRouter,
