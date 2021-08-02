@@ -27,7 +27,7 @@
               <div class="field">
                 <button class="button is-success">LOGIN</button>
               </div>
-              <a href="#" class="float-right">1.0.16</a>
+              <a href="#" class="float-right">1.0.17</a>
             </form>
           </div>
         </div>
